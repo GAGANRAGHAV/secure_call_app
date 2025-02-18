@@ -1,0 +1,82 @@
+# ----------------------------------------
+# 📌 Flutter Ignore
+# ----------------------------------------
+
+# Dart related
+*.dart_tool/
+*.packages
+*.flutter-plugins
+*.flutter-plugins-dependencies
+*.metadata
+*.ios/
+*.android/
+*.idea/
+*.vscode/
+pubspec.lock
+pubspec_overrides.yaml
+
+# Build files
+/build/
+*.iml
+
+# Debug & IDE files
+debug.log
+*.swp
+*.swo
+*.DS_Store
+*.lock
+*.log
+
+# Generated files
+.dart_tool/
+.flutter-plugins/
+.flutter-plugins-dependencies/
+.flutter-versions
+.generated/
+*.g.dart
+*.mocks.dart
+
+# ----------------------------------------
+# 📌 Node.js Backend Ignore
+# ----------------------------------------
+
+# Node modules & dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs & Debugging files
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Cache & OS files
+.cache/
+dist/
+build/
+.tmp/
+*.tsbuildinfo
+
+# Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Database & Misc
+*.sqlite
+*.sqlite3
+*.db
+.dump
