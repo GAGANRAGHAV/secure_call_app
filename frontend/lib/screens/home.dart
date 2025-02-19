@@ -3,6 +3,7 @@ import './awareness.dart';
 import './chatbot.dart';
 import './sms_analysis.dart';
 import './dos_donts.dart';
+import './recording_analysis.dart'; // Import the new page for recording analysis
 
 class HomePage extends StatelessWidget {
   final List<Map<String, dynamic>> features = [
@@ -99,34 +100,31 @@ class HomePage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Quick Stats',
+                        'Audio Scam Detection',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       SizedBox(height: 16),
-                      Row(
-                        children: [
-                          _buildStatItem(
-                            context,
-                            '1.2K',
-                            'Active Users',
-                            Icons.people_outline,
+                      Center(
+                        child: ElevatedButton.icon(
+                          icon: Icon(Icons.upload_file),
+                          label: Text("Upload & Analyze Recording"),
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 12),
+                            textStyle: TextStyle(fontSize: 16),
                           ),
-                          _buildStatItem(
-                            context,
-                            '85%',
-                            'Success Rate',
-                            Icons.trending_up,
-                          ),
-                          _buildStatItem(
-                            context,
-                            '24/7',
-                            'Support',
-                            Icons.support_agent,
-                          ),
-                        ],
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      RecordingAnalysisPage()),
+                            );
+                          },
+                        ),
                       ),
                     ],
                   ),
@@ -154,37 +152,6 @@ class HomePage extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: SizedBox(height: 20),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildStatItem(BuildContext context, String value, String label, IconData icon) {
-    return Expanded(
-      child: Column(
-        children: [
-          Icon(
-            icon,
-            color: Theme.of(context).primaryColor,
-            size: 24,
-          ),
-          SizedBox(height: 6),
-          Text(
-            value,
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-              color: Theme.of(context).primaryColor,
-            ),
-          ),
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 10,
-              color: Colors.grey[600],
-            ),
-            textAlign: TextAlign.center,
           ),
         ],
       ),

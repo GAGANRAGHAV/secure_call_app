@@ -36,7 +36,7 @@ class _AwarenessPageState extends State<AwarenessPage> with SingleTickerProvider
   Future<void> fetchBlogs() async {
     setState(() => isLoading = true);
     try {
-      final response = await http.get(Uri.parse('https://53d2-2409-40d0-11ed-865a-784b-d784-65b4-20f7.ngrok-free.app/blogs'));
+      final response = await http.get(Uri.parse('https://secure-call-app.onrender.com/blogs'));
 
       if (response.statusCode == 200) {
         setState(() {
@@ -186,7 +186,7 @@ class _AwarenessPageState extends State<AwarenessPage> with SingleTickerProvider
                           
                           var request = http.MultipartRequest(
                             'POST',
-                            Uri.parse('https://53d2-2409-40d0-11ed-865a-784b-d784-65b4-20f7.ngrok-free.app/create-blog'),
+                            Uri.parse('https://secure-call-app.onrender.com/create-blog'),
                           );
 
                           request.fields['title'] = titleController.text;
@@ -327,7 +327,7 @@ class _AwarenessPageState extends State<AwarenessPage> with SingleTickerProvider
                                     ClipRRect(
                                       borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
                                       child: Image.network(
-                                        'https://53d2-2409-40d0-11ed-865a-784b-d784-65b4-20f7.ngrok-free.app/' + blog['image'],
+                                        'https://secure-call-app.onrender.com/' + blog['image'],
                                         height: 200,
                                         width: double.infinity,
                                         fit: BoxFit.cover,
