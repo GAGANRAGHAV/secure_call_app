@@ -36,6 +36,17 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+
+const BlogSchema = new mongoose.Schema({
+    title: String,
+    content: String,
+    category: String,
+    image: String,
+  });
+  
+  const Blog = mongoose.model("Blog", BlogSchema);
+  
+
 // Scam Detection Criteria
 const scamFlags = `
 1️⃣ **Fake Authority Claims**:
