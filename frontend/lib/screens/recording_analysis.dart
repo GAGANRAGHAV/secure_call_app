@@ -48,7 +48,7 @@ class _RecordingAnalysisPageState extends State<RecordingAnalysisPage> {
     try {
       var request = http.MultipartRequest(
         "POST",
-        Uri.parse("https://692f-103-199-206-125.ngrok-free.app/analyze-audio"),
+        Uri.parse("https://secure-call-app.onrender.com/analyze-audio"),
       );
       request.files.add(await http.MultipartFile.fromPath('audio', _selectedFile!.path));
       

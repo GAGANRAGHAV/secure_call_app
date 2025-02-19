@@ -55,6 +55,23 @@ const scamFlags = `
    - Using fake case details to sound legitimate (e.g., Naresh Goyal’s money laundering case).
 `;
 
+
+
+// Create a blog
+app.post("/create-blog", upload.single("image"), async (req, res) => {
+    const { title, content, category } = req.body;
+    const image = req.file ? req.file.path : "";
+    const blog = new Blog({ title, content, category, image });
+    await blog.save();
+    res.json({ message: "Blog created successfully!" });
+  });
+  
+  // Fetch blogs
+  app.get("/blogs", async (req, res) => {
+    const blogs = await Blog.find();
+    res.json(blogs);
+  });
+
 // Function to convert audio to WAV format
 async function convertToWav(inputFile, outputFile) {
   return new Promise((resolve, reject) => {
